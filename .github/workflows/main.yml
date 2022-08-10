@@ -33,3 +33,9 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
         run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
+        -Dsonar.projectName=test_sonar 
+        #-Dsonar.projectKey=sonar.github 
+        -Dsonar.login=admin 
+        -Dsonar.password=123456 
+        -Dsonar.projectBaseDir=. 
+        -Dsonar.sources=src/main/java
